@@ -1,0 +1,195 @@
+/* =============================================
+   CADASTRO — cadastro.html (Tela 2)
+   ============================================= */
+
+.cadastro-page {
+  background: linear-gradient(145deg, #050D1F 0%, #081428 50%, #080E20 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen-inner {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 940px;
+  padding: 96px 40px 60px;
+  margin: auto;
+  animation: fadeUp 0.6s ease both;
+}
+
+.screen-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.screen-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.screen-header p {
+  font-size: 15px;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+/* Cards de tipo */
+.type-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.type-card {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(59,142,240,0.12);
+  border-radius: 18px;
+  padding: 48px 44px;
+  cursor: pointer;
+  transition: all 0.32s cubic-bezier(.22,.68,0,1.2);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+}
+
+.type-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.type-card.fisica::after {
+  background: radial-gradient(ellipse at 50% 0%, rgba(0,200,232,0.1) 0%, transparent 65%);
+}
+
+.type-card.juridica::after {
+  background: radial-gradient(ellipse at 50% 0%, rgba(59,142,240,0.1) 0%, transparent 65%);
+}
+
+.type-card:hover { transform: translateY(-6px); }
+.type-card:hover::after { opacity: 1; }
+
+.type-card.fisica:hover {
+  border-color: rgba(0,200,232,0.42);
+  box-shadow: 0 16px 48px rgba(0,200,232,0.12);
+}
+
+.type-card.juridica:hover {
+  border-color: rgba(59,142,240,0.42);
+  box-shadow: 0 16px 48px rgba(59,142,240,0.14);
+}
+
+.card-icon {
+  width: 72px; height: 72px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 26px;
+  font-size: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.fisica .card-icon {
+  background: rgba(0,200,232,0.1);
+  box-shadow: 0 0 0 1px rgba(0,200,232,0.18);
+}
+
+.juridica .card-icon {
+  background: rgba(59,142,240,0.1);
+  box-shadow: 0 0 0 1px rgba(59,142,240,0.18);
+}
+
+.type-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.type-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.72;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+.card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 30px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.22s;
+  position: relative;
+  z-index: 1;
+}
+
+.fisica .card-btn {
+  background: rgba(0,200,232,0.1);
+  color: var(--cyan-light);
+  border: 1px solid rgba(0,200,232,0.22);
+}
+
+.fisica .card-btn:hover { background: rgba(0,200,232,0.2); }
+
+.juridica .card-btn {
+  background: rgba(59,142,240,0.1);
+  color: var(--blue-light);
+  border: 1px solid rgba(59,142,240,0.22);
+}
+
+.juridica .card-btn:hover { background: rgba(59,142,240,0.2); }
+
+.back-center {
+  text-align: center;
+  margin-top: 6px;
+}
+
+.link-back {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.link-back:hover { color: var(--white); }
+
+/* ---- Responsivo ---- */
+@media (max-width: 768px) {
+  .screen-inner  { padding: 88px 20px 48px; }
+  .type-cards    { grid-template-columns: 1fr; }
+  .type-card     { padding: 36px 28px; }
+}

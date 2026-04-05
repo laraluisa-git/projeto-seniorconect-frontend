@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sênior Conect + IA — Formulário</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/formulario.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+<div class="screen-bg"></div>
+
+<!-- MINI NAV -->
+<nav class="mini-nav">
+  <a href="index.html" class="logo-sm">Sênior <span>Conect</span></a>
+  <div class="steps">
+    <div class="step done"></div>
+    <div class="step done"></div>
+    <div class="step active"></div>
+  </div>
+  <a href="cadastro.html" class="btn-back"> Voltar</a>
+</nav>
+
+<!-- FORMULÁRIO -->
+<div class="formulario-page">
+  <div class="form-wrapper">
+
+    <div id="form-pill" class="form-type-pill"></div>
+    <h2 class="form-title" id="form-title">Cadastro</h2>
+    <p class="form-subtitle" id="form-subtitle"></p>
+
+    <div class="form-card">
+      <form id="main-form" onsubmit="submitForm(event)">
+        <div class="form-grid" id="form-fields">
+          <!-- Campos injetados pelo formulario.js -->
+        </div>
+        <button type="submit" class="btn-submit" id="submit-btn">Enviar cadastro</button>
+      </form>
+    </div>
+
+    <div class="back-center">
+      <a href="cadastro.html" class="link-back"> Escolher outro tipo de cadastro</a>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- Toast de confirmação -->
+<div class="toast" id="toast">Cadastro enviado com sucesso!</div>
+
+<script src="js/navegacao.js"></script>
+<script src="js/formulario.js"></script>
+<script src="js/toast.js"></script>
+</body>
+</html>

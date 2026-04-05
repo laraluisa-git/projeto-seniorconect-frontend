@@ -1,0 +1,206 @@
+/* =============================================
+   FORMULÁRIO — formulario.html (Tela 3)
+   ============================================= */
+
+.formulario-page {
+  background: linear-gradient(145deg, #050D1F 0%, #081428 50%, #080E20 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 700px;
+  padding: 96px 40px 60px;
+  margin: auto;
+  animation: fadeUp 0.6s ease both;
+}
+
+/* Pill de tipo */
+.form-type-pill {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 100px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.form-type-pill.fisica {
+  background: rgba(0,200,232,0.1);
+  color: var(--cyan-light);
+  border: 1px solid rgba(0,200,232,0.22);
+}
+
+.form-type-pill.juridica {
+  background: rgba(59,142,240,0.1);
+  color: var(--blue-light);
+  border: 1px solid rgba(59,142,240,0.22);
+}
+
+.form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.form-subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 36px;
+}
+
+/* Card do formulário */
+.form-card {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(59,142,240,0.1);
+  border-radius: 20px;
+  padding: 40px 44px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Grupos de campo */
+.fg {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.fg.full { grid-column: 1 / -1; }
+
+/* Labels */
+label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Inputs, Selects, Textarea */
+input,
+select,
+textarea {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14.5px;
+  color: var(--white);
+  background: rgba(59,142,240,0.05);
+  border: 1px solid rgba(59,142,240,0.14);
+  border-radius: 9px;
+  padding: 11px 15px;
+  outline: none;
+  width: 100%;
+  transition: all 0.22s;
+  -webkit-appearance: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255,255,255,0.2);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(0,200,232,0.5);
+  background: rgba(0,200,232,0.05);
+  box-shadow: 0 0 0 3px rgba(0,200,232,0.07);
+}
+
+select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%237A9CC4' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 13px center;
+  background-size: 16px;
+  padding-right: 38px;
+  background-color: rgba(59,142,240,0.05);
+}
+
+select option {
+  background: #081428;
+  color: var(--white);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 115px;
+  line-height: 1.6;
+}
+
+/* Botões de submit */
+.btn-submit {
+  width: 100%;
+  margin-top: 28px;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--blue-accent) 0%, #0A3F99 100%);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 0.4px;
+  transition: all 0.25s;
+  box-shadow: 0 6px 22px rgba(30,111,217,0.42);
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 34px rgba(30,111,217,0.62);
+}
+
+.btn-submit.cyan {
+  background: linear-gradient(135deg, var(--cyan) 0%, #008FAA 100%);
+  color: #001C24;
+  box-shadow: 0 6px 22px rgba(0,200,232,0.35);
+}
+
+.btn-submit.cyan:hover {
+  box-shadow: 0 10px 34px rgba(0,200,232,0.55);
+}
+
+/* Link voltar */
+.back-center {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.link-back {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.link-back:hover { color: var(--white); }
+
+/* ---- Responsivo ---- */
+@media (max-width: 768px) {
+  .form-wrapper { padding: 88px 20px 48px; }
+  .form-card    { padding: 28px 24px; }
+  .form-grid    { grid-template-columns: 1fr; }
+  .fg.full      { grid-column: 1; }
+}
